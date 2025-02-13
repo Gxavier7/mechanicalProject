@@ -12,7 +12,7 @@ export interface ServiceOptionalAttributes extends Optional <ServiceAttributes, 
 
 export interface ServiceInstance extends Model <ServiceAttributes, ServiceOptionalAttributes>, ServiceAttributes {}
 
-export const Services = sequelize.define('services', {
+export const Services = sequelize.define <ServiceInstance, ServiceAttributes> ('services', {
   id: {
     allowNull: false,
     primaryKey: true,

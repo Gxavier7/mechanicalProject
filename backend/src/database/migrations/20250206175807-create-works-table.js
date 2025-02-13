@@ -36,6 +36,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DataTypes.DATE
       },
+      finished: {
+        allowNull: false,
+        type: Sequelize.DataTypes.BOOLEAN
+      },
       payment_form: {
         allowNull: false, 
         type: Sequelize.DataTypes.STRING
