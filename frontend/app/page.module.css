@@ -1,0 +1,88 @@
+.page {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  font-family: var(--font-geist-sans);
+}
+
+.title {
+  font-family: 'Jokei One';
+  font-size: 48px;
+  z-index: 0;
+}
+
+.title::after{
+  top: 0;
+  left: 5rem;
+  content: '';
+  width: 75vw;
+  height: 55vh;
+  overflow: hidden;
+  position: absolute;
+  background-color: #A1A1A1;
+  clip-path: polygon(100% 0%, 0% 0%, 65% 100%);
+  z-index: -1;
+}
+
+.main {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.image {
+  overflow: hidden;
+  width: 27rem;
+  height: 27rem;
+}
+
+.loginForm {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.loginForm::after {
+  top: 0;
+  right: 0rem;
+  content: '';
+  width: 70vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  background-color: #1a1a1a;
+  clip-path: polygon(0% 100%, 100% -40%, 100% 100%, 0% 100%);
+  z-index: -1;
+}
+
+.input {
+	font-size: 18px;
+	padding: 5px 10px;
+	width: 100%;
+	padding-left: 25px;
+	outline: none;
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #C4D1EB;
+	border-radius: 5px;
+	box-shadow: 3px 3px 2px 0px #E2E2E2;
+	transition: .3s ease;
+}
+
+.input:focus {
+	background: #F2F2F2;
+	border: 1px solid #5A7EC7;
+	border-radius: 10px;
+}
+
+.input::placeholder {
+	color: #000000;
+}

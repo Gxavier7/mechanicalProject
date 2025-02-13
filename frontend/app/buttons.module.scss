@@ -1,0 +1,16 @@
+
+.greenButton {
+  border: none;
+  color: #fff;
+  transition: 1s;
+  cursor: pointer;
+  border-radius: 5;
+  padding: .5rem 1rem;
+  min-width: 7rem;
+  background-color: #1D6317;
+  
+  &:hover{
+    transition: 1s;
+    background-color: #308628;
+  }
+}

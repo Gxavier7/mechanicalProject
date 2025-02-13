@@ -48,6 +48,10 @@ export const Works = sequelize.define( 'works', {
     allowNull: false,
     type: DataTypes.DATE
   },
+  finished: {
+    allowNull: false,
+    type: DataTypes.BOOLEAN
+  },
   paymentForm: {
     allowNull: false,
     type: DataTypes.STRING

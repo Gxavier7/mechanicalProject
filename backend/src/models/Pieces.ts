@@ -12,7 +12,7 @@ export interface PiecesOptionalAttributes extends Optional <PiecesAttributes, 'i
 
 export interface PiecesInstance extends Model <PiecesAttributes, PiecesOptionalAttributes>, PiecesAttributes {}
 
-export const Pieces = sequelize.define('pieces', {
+export const Pieces = sequelize.define <PiecesInstance, PiecesAttributes> ('pieces', {
   id: {
     allowNull: false,
     primaryKey: true,
