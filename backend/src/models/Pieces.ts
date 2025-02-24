@@ -5,6 +5,7 @@ export interface PiecesAttributes {
   id: number,
   workId: number,
   piece: string,
+  quantity: number,
   value: number,
 }
 
@@ -29,6 +30,10 @@ export const Pieces = sequelize.define <PiecesInstance, PiecesAttributes> ('piec
   piece: {
     allowNull: false,
     type: DataTypes.STRING
+  },
+  quantity: {
+    allowNull: false,
+    type: DataTypes.INTEGER
   },
   value: {
     allowNull: false,

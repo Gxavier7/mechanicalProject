@@ -1,0 +1,25 @@
+.navbar {
+  gap: 2rem;
+  width: 6rem;
+  height: 90vh;
+  position: fixed;
+  padding: 3rem 0;
+  display: flex;
+  border-radius: 45;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #1A1A1A;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover{
+    transition: .2s;
+    transform: scale(1.2);
+  }
+}
