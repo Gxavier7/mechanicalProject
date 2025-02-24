@@ -1,13 +1,12 @@
 'use client'
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import buttonStyle from "./buttons.module.scss"
 import { FormEvent, useState } from "react";
 import authService from "@/src/services/authService";
 import { useRouter } from 'next/navigation'
-import { Alert, Button, Form } from "reactstrap";
-import ToastComponent from "./components/common/toast";
+import { Button, Form } from "reactstrap";
+import ToastComponent from "./components/toast";
 
 export default function Home() {
   const router = useRouter();
@@ -33,8 +32,7 @@ export default function Home() {
         setToastIsOpen(false)
         router.push("/home")
       }, 1000 * 1)
-
-    } else {
+ } else {
       setToastIsOpen(true)
       setToastMessage(data.message)
       setToastColor("error")
