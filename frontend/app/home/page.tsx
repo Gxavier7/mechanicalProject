@@ -30,7 +30,7 @@ export default function HomePage () {
       <div className={styles.activeServices}>
         <List 
           title="Serviços em andamento"
-          headers={['Código', 'CPF/CNPJ', 'Placa', 'Cliente', 'Data Entrega', 'Total', "Finalizado"]}
+          headers={['Código', 'CPF/CNPJ', 'Placa', 'Cliente', 'Data Entrega', 'Total']}
         >
           <ListBodyServiceInProgress
             dataArray={data}

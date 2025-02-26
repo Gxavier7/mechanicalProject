@@ -6,8 +6,7 @@ interface data {
   plate: string,
   client: string,
   endday: string,
-  total: number,
-  finished: boolean
+  total: number
 }
 
 interface props {
@@ -44,13 +43,6 @@ export default function ListBodyServiceInProgress (props: props) {
             </td>
             <td>
               R$ {object.total.toFixed(2)}
-            </td>
-            <td>
-              { 
-                object.finished 
-                ? <img src='/greenCircle.png'/>
-                : <img src='/redCircle.png'/>
-              }
             </td>
           </tr>
         })
