@@ -14,7 +14,7 @@ export default function Home() {
   const [toastMessage, setToastMessage] = useState("")
   const [toastColor, setToastColor] = useState("error")
 
-  const handleLogin = async ( event: FormEvent<HTMLFormElement>) => {
+  const handleLogin = ( event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -22,24 +22,26 @@ export default function Home() {
     const password = formData.get("password")!.toString();
     const params =  { email, password }
 
-    const { data, status } = await authService.login(params);    
+    authService.login(params).then((response) => {
+      const {data, status} = response
 
-    if ( status === 200 ) {
-      setToastIsOpen(true)
-      setToastMessage("Login feito com sucesso")
-      setToastColor("green")
-      setTimeout(()=>{
-        setToastIsOpen(false)
-        router.push("/home")
-      }, 1000 * 1)
- } else {
-      setToastIsOpen(true)
-      setToastMessage(data.message)
-      setToastColor("error")
-      setTimeout(()=>{
-        setToastIsOpen(false)
-      }, 1000 * 3)
-    }
+      if ( status === 200 ) {
+        setToastIsOpen(true)
+        setToastMessage("Login feito com sucesso")
+        setToastColor("green")
+        setTimeout(()=>{
+          setToastIsOpen(false)
+          router.push("/home")
+        }, 1000 * 1)
+      } else {
+        setToastIsOpen(true)
+        setToastMessage(data.message)
+        setToastColor("error")
+        setTimeout(()=>{
+          setToastIsOpen(false)
+        }, 1000 * 3)
+      }
+    });    
   }
 
   return (

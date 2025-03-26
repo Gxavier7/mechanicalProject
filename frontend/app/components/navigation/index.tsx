@@ -1,16 +1,16 @@
 import styles from "./nav.module.scss"
 
 interface props {
-  currentPage: "veicle" | "service" | "client" | "home"
+  currentPage: "veicle" | "work" | "client" | "home"
 }
 
 export default function NavigationBar ({currentPage}: props) {
 
-  const paths = [ "veicle", "service", "client", "home" ]
+  const paths = [ "home", "work", "client", "veicle"]
 
   return <>
     <div className={styles.navbar}>
-      <a href={`${currentPage}`}>
+      <a href={`${currentPage}`} >
         <img className={styles.icon} src={`/${currentPage}Icon.png`} alt={currentPage + ' Icon'} />
       </a>
 

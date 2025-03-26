@@ -9,5 +9,6 @@ router.post('/auth/login', authController.login)
 
 router.get('/works', worksController.getAllWorks)
 router.get('/works/active', worksController.getActiveServices)
+router.get('/works/:id', worksController.getWorkById)
 
 export { router }

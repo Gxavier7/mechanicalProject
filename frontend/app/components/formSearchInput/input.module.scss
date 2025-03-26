@@ -1,0 +1,32 @@
+.inputBox {
+  gap: .5rem;
+  width: 40vw;
+  margin: 1rem 0 1rem 2rem;
+  display: flex;
+  border-radius: 5;
+  align-items: center;
+  background-color: transparent;
+  
+  .input {
+    width: 95%;
+    border: none;
+    border-radius: 10;
+    color: #d9d9d9;
+    background-color: #d9d9d9;
+    padding: .75rem 1rem;
+
+    &:focus {
+      outline: none
+    }
+
+    &::placeholder { 
+      color: #000;
+    }
+  }
+
+  .icon {
+    width: 23px;
+    height: 23px;
+    fill: #dfdfdf;
+  }
+}

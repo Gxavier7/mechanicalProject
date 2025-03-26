@@ -48,9 +48,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updated_at: {
+      discount: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.FLOAT
       }
     });
   },

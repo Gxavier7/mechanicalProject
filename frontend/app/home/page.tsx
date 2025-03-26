@@ -6,21 +6,28 @@ import List from "../components/list";
 import ListBodyServiceInProgress from "../components/listBodyServiceInProgress";
 import worksService from "@/src/services/worksService";
 import { useEffect, useState } from "react";
+import ToastComponent from "../components/toast";
 
 export default function HomePage () {
   const [data, setData] = useState([]);
+  const [toastIsOpen, setToastIsOpen] = useState(false)
+  const [toastMessage, setToastMessage] = useState("")
+  const [toastColor, setToastColor] = useState("error")
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await worksService.getActiveWorks();
-        setData(response.data[0]); 
-      } catch (error) {
-        console.error("Erro ao buscar serviços:", error);
-      }
-    }
 
-    fetchData();
+    worksService.getActiveWorks().then(response => {
+      setData(response.data[0]); 
+    })
+    .catch (error => {
+      setToastIsOpen(true)
+      setToastMessage("Ocorreu um erro ao carregar os dados")
+      setToastColor("error")
+      setTimeout(()=>{
+        setToastIsOpen(false)
+      }, 1000 * 3)
+    })
+    
   }, []);
 
   return <>
@@ -37,6 +44,12 @@ export default function HomePage () {
           />
         </List>
       </div>
+
+      <ToastComponent
+        isOpen={toastIsOpen} 
+        message={toastMessage}
+        color={toastColor}
+      />
     </div>
   </>
 }

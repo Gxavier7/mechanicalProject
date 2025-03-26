@@ -23,10 +23,14 @@
     z-index: 2;
     position: sticky;
     background: #838383;
+
+    th:not(:last-child) {
+      box-shadow: 2px 0px 0 0 #000000;
+    }
+
   }
 
   tbody{
-
     tr{
       background-color: #f3f3f3;
       

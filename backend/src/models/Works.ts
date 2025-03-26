@@ -56,4 +56,8 @@ export const Works = sequelize.define( 'works', {
     allowNull: false,
     type: DataTypes.STRING
   },
+  discount: {
+    allowNull: false,
+    type: DataTypes.FLOAT
+  }
 })

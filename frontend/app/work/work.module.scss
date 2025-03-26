@@ -1,0 +1,17 @@
+.activeServices {
+  margin-left: 8rem;
+}
+
+.header {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 39px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+}
